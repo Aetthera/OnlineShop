@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyASsxatflSUHiT6h1Ka4D_d9mvLZ0QWPMk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>85953401177</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.alena.OnlineShop</string>
+	<key>PROJECT_ID</key>
+	<string>onlineshopuiassgn</string>
+	<key>STORAGE_BUCKET</key>
+	<string>onlineshopuiassgn.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:85953401177:ios:4d2188ac2abe686c2e7c48</string>
+</dict>
+</plist>
