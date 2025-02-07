@@ -10,33 +10,58 @@ import SwiftUI
 struct ProductCardView: View {
     
     // Properties
+    @EnvironmentObject var vm: ViewModel
     let product: Product
     
     // Body
     var body: some View {
         GeometryReader { geo in
             let size = geo.size
-            
-            if let url = URL(string: product.image){
-                AsyncImage(url: url) { image in
-                    image
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: size.width, height: size.height)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                } placeholder: {
-                    ProgressView()
+            ZStack(alignment: .bottom){
+                ZStack(alignment: .topTrailing){
+                    if let url = URL(string: product.image){
+                        CardImageView(url: url, width: size.width, height: size.height)
+                        
+                        
+                        Button {
+                            // Action
+                        } label:{
+                            Image(systemName: "heart.fill")
+                                .padding(10)
+                                .foregroundColor(product.isFavorite ? .red : .gray)
+                                .clipShape(Circle())
+                                .padding()
+                        }
+                    }
                 }
+                VStack(alignment: .leading){
+                    Text(product.name)
+                        .titleFont()
+                    Text("$\(product.price)")
+                        .subtitle()
+                }
+                .padding(10)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(.background.opacity(0.9))
+                .cornerRadius(10)
+                .padding(10)
             }
-            
         }
         .frame(height: UIScreen.main.bounds.width * 0.7)
-        .background(.green)
+        .background(.background.opacity(0.5))
+        .padding(10)
+        .cornerRadius(10)
     }
 }
 
+
 #Preview {
     ProductCardView(
-        product: Product(name: "DD", description: "DD", image: "https://firebasestorage.googleapis.com/v0/b/onlineshopuiassgn.firebasestorage.app/o/products%2Fchristmas.svg?alt=media&token=81896f8e-d5b5-4727-b421-be731c28440b", price: 43, isFavorite: false)
+        product: Product(
+            name: "Trip to Space",
+            description: "DD",
+            image: "https://firebasestorage.googleapis.com/v0/b/onlineshopuiassgn.firebasestorage.app/o/products%2Fspace2.png?alt=media&token=f462ce79-24b1-4689-91f3-d343acf8a535",
+            price: 43,
+            isFavorite: false)
     )
 }
